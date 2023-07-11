@@ -1,0 +1,25 @@
+.hero {
+  min-height: 600px;
+  padding-top: 220px;
+
+  background: url("../img/welcome.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__welcome {
+  width: 600px;
+  padding: 35px 40px;
+
+  color: var(--light);
+  font-family: var(--font-family-sub);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-large);
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+
+  background: var(--dark);
+}
