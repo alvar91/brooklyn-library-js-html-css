@@ -1,0 +1,10 @@
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap-standart);
+}
+
+.nav__item {
+  font-size: var(--font-size-medium);
+  line-height: var(--font-line-height-medium);
+}
