@@ -1,0 +1,31 @@
+.radios {
+  margin-bottom: 27px;
+}
+
+.radios__list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 91px;
+}
+
+.radios__buttons {
+  display: flex;
+  gap: var(--gap-standart);
+  margin-top: 50px;
+}
+
+.radios__button {
+  font-size: 14px;
+}
+
+.radios__title {
+  margin: 0;
+  margin-bottom: 34px;
+  color: var(--title-color);
+  font-size: var(--font-size-medium);
+  line-height: normal;
+}
+
+.radios__input {
+  width: 335px;
+}
