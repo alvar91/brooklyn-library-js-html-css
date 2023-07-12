@@ -1,0 +1,10 @@
+.coffee-shop__text {
+  margin: 0;
+  margin-bottom: 40px;
+  color: var(--text-color);
+  text-align: center;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-base);
+  letter-spacing: 2px;
+}
