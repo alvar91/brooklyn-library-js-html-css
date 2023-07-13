@@ -1,48 +1,47 @@
 :root {
-    /* Colors */
-    --light: #FFF;
-    --grey: #8E8E8E;
-    --dark: #0C0C0E;
-    --black: #000;
-    --primary: #BB945F;
+  /* Colors */
+  --light: #fff;
+  --grey: #8e8e8e;
+  --dark: #0c0c0e;
+  --black: #000;
+  --primary: #bb945f;
 
-    --bg-color: var(--light);
-    --footer-bg-color: var(--dark);
-    --title-color: var(--black);
-    --button-color: var(--primary);
-    --section-heading: var(--dark);
-    --text-color: var(--black);
-    --footer-text-color: var(--light);
+  --bg-color: var(--light);
+  --footer-bg-color: var(--dark);
+  --title-color: var(--black);
+  --button-color: var(--primary);
+  --section-heading: var(--dark);
+  --text-color: var(--black);
+  --footer-text-color: var(--light);
 
-    /* Fonts */
-    --font-family-default: "Arial", sans-serif;
-    --font-family-custom: "Inter";
-    --font-family-custom-sub: "Forum";
+  /* Fonts */
+  --font-family-default: "Arial", sans-serif;
+  --font-family-custom: "Inter";
+  --font-family-custom-sub: "Forum";
 
-    --font-family: var(--font-family-custom), var(--font-family-default);
-    --font-family-sub: var(--font-family-custom-sub), var(--font-family-default);
+  --font-family: var(--font-family-custom), var(--font-family-default);
+  --font-family-sub: var(--font-family-custom-sub), var(--font-family-default);
 
-    --font-size-base: 15px;
-    --font-line-height-base: 40px;
-    --font-weight-base: 400;
+  --font-size-base: 15px;
+  --font-line-height-base: 40px;
+  --font-weight-base: 400;
 
-    --font-weight-bold: 700;
+  --font-weight-bold: 700;
 
-    --font-size-medium: 20px;
-    --font-line-height-medium: 50px;
+  --font-size-medium: 20px;
+  --font-line-height-medium: 50px;
 
-    --font-size-big: 30px;
-    --font-line-height-big: 50px;
+  --font-size-big: 30px;
+  --font-line-height-big: 50px;
 
-    --font-size-large: 40px;
-    --font-line-height-large: 50px;
+  --font-size-large: 40px;
+  --font-line-height-large: 50px;
 
+  /* Layout */
+  --min-width: 320px;
+  --gap-standart: 30px;
 
-    /* Layout */
-    --min-width: 320px;
-    --gap-standart: 30px;
-
-    /* Transitions and Animations */
-    --transition-duration: 0.3s;
-    --transition-function: ease;
+  /* Transitions and Animations */
+  --transition-duration: 0.3s;
+  --transition-function: ease;
 }
