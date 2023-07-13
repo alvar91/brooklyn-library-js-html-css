@@ -9,6 +9,7 @@
 }
 
 .hero__welcome {
+  margin: 0;
   width: 600px;
   padding: 35px 40px;
 
