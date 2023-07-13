@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Brooklyn Public Library</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brooklyn Public Library</title>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
     <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" crossorigin />
     <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" crossorigin />
     <link
@@ -42,31 +61,31 @@
               <a class="link" href="#coffee-shop">Coffee shop</a>
             </li>
             <li class="nav__item">
-              <a class="link" href="#">Contacts</a>
+              <a class="link" href="#contacts">Contacts</a>
             </li>
             <li class="nav__item">
-              <a class="link" href="#">Library Card</a>
+              <a class="link" href="#digital-library">Library Card</a>
             </li>
           </ul>
         </nav>
 
-        <button class="header__profile profile">
+        <a class="header__profile profile" href="#">
           <img
             class="profile__avatar"
             src="./img/icon-profile.svg"
             onerror="this.src='./img/icon-profile.svg'"
             alt="Аватар пользователя"
           />
-        </button>
+        </a>
       </div>
     </header>
 
     <main class="main">
       <section class="hero">
-        <h2 class="hero__welcome">
+        <h3 class="hero__welcome">
           Welcome <br />
           to the Brooklyn Library
-        </h2>
+        </h3>
       </section>
       <section class="about" id="about">
         <div class="container">
@@ -143,52 +162,52 @@
                 <li class="radios__item">
                   <input
                     type="radio"
-                    class="radio"
+                    class="radios__input"
                     name="favorites"
                     id="winter"
                     checked
                   />
-                  <label for="winter" class="radio__wrapper">
-                    <span class="radio__dot"></span>
-                    Winter
+                  <label for="winter" class="radios__wrapper">
+                    <span class="radios__dot"></span>
+                    <span class="radios__text">Winter</span>
                   </label>
                 </li>
                 <li class="radios__item">
                   <input
                     type="radio"
-                    class="radio"
+                    class="radios__input"
                     name="favorites"
                     id="spring"
                   />
-                  <label for="spring" class="radio__wrapper">
-                    <span class="radio__dot"></span>
-                    Spring
+                  <label for="spring" class="radios__wrapper">
+                    <span class="radios__dot"></span>
+                    <span class="radios__text">Spring</span>
                   </label>
                 </li>
 
                 <li class="radios__item">
                   <input
                     type="radio"
-                    class="radio"
+                    class="radios__input"
                     name="favorites"
                     id="summer"
                   />
-                  <label for="summer" class="radio__wrapper">
-                    <span class="radio__dot"></span>
-                    Summer
+                  <label for="summer" class="radios__wrapper">
+                    <span class="radios__dot"></span>
+                    <span class="radios__text">Summer</span>
                   </label>
                 </li>
 
                 <li class="radios__item">
                   <input
                     type="radio"
-                    class="radio"
+                    class="radios__input"
                     name="favorites"
                     id="autumn"
                   />
-                  <label for="autumn" class="radio__wrapper">
-                    <span class="radio__dot"></span>
-                    Autumn
+                  <label for="autumn" class="radios__wrapper">
+                    <span class="radios__dot"></span>
+                    <span class="radios__text">Autumn</span>
                   </label>
                 </li>
               </ul>
@@ -807,24 +826,166 @@
         </div>
       </section>
 
-      <section class="coffee-shop" id="coffee-shop">
+      <section class="contacts" id="contacts">
         <div class="container">
           <h2 class="section-heading">Our Contacts</h2>
+          <div class="contacts__inner">
+            <div class="contacts__block">
+              <h3 class="contacts__title">For all Library inquiries:</h3>
+              <ul class="contacts__list">
+                <li class="contacts__item">
+                  Please call
+                  <a class="link" href="tel:6177302370">(617) 730-2370</a>
+                </li>
+                <li class="contacts__item">
+                  For TTY service, please call
+                  <a class="link" href="tel:6177302370">(617) 730-2370</a>
+                </li>
+                <li class="contacts__item">
+                  Putterham Library:
+                  <a class="link" href="tel:617730-2385">(617) 730-2385</a>
+                </li>
+              </ul>
 
-          <iframe
-            width="696"
-            height="414"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src="https://maps.google.com/maps?width=696&amp;height=414&amp;hl=en&amp;q=286%20cadman%20plaza+(My%20Business%20Name)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            ><a href="https://www.maps.ie/distance-area-calculator.html"
-              >area maps</a
-            ></iframe
-          >
+              <h3 class="contacts__title contacts__title--last">
+                Senior Staff
+              </h3>
+              <ul class="contacts__list">
+                <li class="contacts__item">
+                  Library Director:
+                  <a
+                    class="contacts__mail link"
+                    href="mailto:amandaHirst@gmail.com"
+                    >Amanda Hirst</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <iframe
+              class="contacts__frame"
+              src="https://maps.google.com/maps?width=696&amp;height=414&amp;hl=en&amp;q=286%20cadman%20plaza+(My%20Business%20Name)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="digital-library" id="digital-library">
+        <div class="container">
+          <h2 class="section-heading">Digital Library Cards</h2>
+
+          <div class="digital-library__inner">
+            <div class="digital-library__block">
+              <h3 class="digital-library__title-form">
+                Find your Library card
+              </h3>
+              <div class="digital-library__form">
+                <form class="form" action="#">
+                  <div class="form__block">
+                    <span class="form__title">Brooklyn Public Library</span>
+                    <input
+                      class="form__input"
+                      type="text"
+                      name="name"
+                      placeholder="Reader's name"
+                      required
+                      pattern="^[a-zA-Z0-9\-]+$"
+                    />
+                    <input
+                      class="form__input"
+                      type="text"
+                      name="card"
+                      placeholder="Card number"
+                      required
+                      pattern="^[a-zA-Z0-9\-]+$"
+                    />
+                  </div>
+                  <button class="form__button button" type="submit">
+                    Check the card
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="digital-library__block">
+              <h3 class="digital-library__title-card">Get a reader card</h3>
+              <p class="digital-library__text">
+                You will be able to see a reader card after logging into account
+                or you can register a new account
+              </p>
+              <div class="digital-library__buttons">
+                <button class="button">Sign Up</button>
+                <button class="button">Log in</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__block">
+            <address class="footer__address">
+              <a
+                class="link"
+                href="http://maps.google.com/?q=286CadmanPlazaNewYorkNY11238UnitedStates"
+                >286 Cadman Plaza, New York, NY 11238, United States</a
+              >
+            </address>
+            <ul class="socials">
+              <li class="socials__item">
+                <a class="socials__link" href="#">
+                  <svg class="icon">
+                    <use
+                      xlink:href="img/socials-icons.svg#twitter"
+                      aria-label="Изображение иконки twitter"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link" href="#">
+                  <svg class="icon">
+                    <use
+                      xlink:href="img/socials-icons.svg#instagram"
+                      aria-label="Изображение иконки instagram"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link" href="#">
+                  <svg class="icon">
+                    <use
+                      xlink:href="img/socials-icons.svg#facebook"
+                      aria-label="Изображение иконки facebook"
+                    ></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__block">
+            <ul class="footer__list">
+              <li class="footer__item">
+                Mon - Fri<br />
+                08:00 am - 07:00 pm
+              </li>
+              <li class="footer__item">
+                Sat - Sun<br />
+                10:00 am - 06:00 pm
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__year">2023</p>
+          <a class="footer__school link" href="https://rs.school/js-stage0"
+            >The Rolling Scopes School</a
+          >
+          <a class="footer__author link" href="https://github.com/alvar91"
+            >Aleksey Varov</a
+          >
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
