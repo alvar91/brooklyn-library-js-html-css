@@ -7,10 +7,12 @@
     --primary: #BB945F;
 
     --bg-color: var(--light);
+    --footer-bg-color: var(--dark);
     --title-color: var(--black);
     --button-color: var(--primary);
     --section-heading: var(--dark);
     --text-color: var(--black);
+    --footer-text-color: var(--light);
 
     /* Fonts */
     --font-family-default: "Arial", sans-serif;
