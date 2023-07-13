@@ -1,11 +1,12 @@
 .menu__list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .menu__block {
   display: grid;
-  grid-template-columns: 1fr 100px auto;
+  grid-template-columns: 1fr 97px auto;
   column-gap: 60px;
   margin-bottom: 40px;
   justify-content: space-between;
