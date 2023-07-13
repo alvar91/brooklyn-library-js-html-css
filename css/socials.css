@@ -1,0 +1,16 @@
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials__link {
+  display: flex;
+  transition: opacity var(--transition-duration) var(--transition-function);
+}
+
+.socials__link:hover,
+.socials__link:focus,
+.socials__link:active {
+  opacity: 0.5;
+  transition: opacity var(--transition-duration) var(--transition-function);
+}
