@@ -30,7 +30,8 @@ ul {
 
 .link {
   color: inherit;
-  transition: color var(--transition-duration) var(--transition-function);
+  transition: color var(--transition-duration) var(--transition-function),
+    border-bottom var(--transition-duration) var(--transition-function);
 }
 
 .link:hover,
