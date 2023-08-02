@@ -2,14 +2,22 @@
   min-height: 600px;
   padding-top: 220px;
 
-  background: url("../img/welcome.jpg");
+  background: linear-gradient(
+      180deg,
+      #0c0c0e 0%,
+      #0c0c0e 0.01%,
+      rgba(18, 18, 21, 0.1) 100%
+    ),
+    url("../img/welcome.jpg");
+
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .hero__welcome {
   margin: 0;
+  margin-left: -20px;
   width: 600px;
   padding: 35px 40px;
 
