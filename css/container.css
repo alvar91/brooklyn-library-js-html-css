@@ -2,3 +2,11 @@
   margin: 0px auto;
   width: 1400px;
 }
+
+@media (max-width: 1439px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
