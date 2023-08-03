@@ -32,4 +32,14 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  z-index: 999;
+}
+
+@media (max-width: 1439px) {
+  .header__nav {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+  }
 }
