@@ -12,13 +12,13 @@
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .hero__welcome {
   margin: 0;
   margin-left: -20px;
-  width: 600px;
+  max-width: 600px;
   padding: 35px 40px;
 
   color: var(--light);
