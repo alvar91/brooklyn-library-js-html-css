@@ -11,7 +11,7 @@
   line-height: var(--font-line-height-medium);
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1024px) {
   .nav__list {
     position: absolute;
     align-items: flex-start;
