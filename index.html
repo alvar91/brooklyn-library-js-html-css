@@ -38,9 +38,7 @@
       crossorigin
     />
     <link rel="preload" href="fonts/Forum.woff2" as="font" crossorigin />
-    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="js/swiper-bundle.min.js"></script>
     <script defer src="js/main.js"></script>
   </head>
 
@@ -78,7 +76,11 @@
           />
         </a>
 
-        <button class="burger-menu" id="burger-menu" aria-label="Развернуть меню навигации">
+        <button
+          class="burger-menu"
+          id="burger-menu"
+          aria-label="Развернуть меню навигации"
+        >
           <span class="burger-menu__first-line"></span>
           <span class="burger-menu__second-line"></span>
           <span class="burger-menu__third-line"></span>
@@ -103,61 +105,74 @@
             and a cozy coffee shop inside
           </p>
 
-          <div class="about__slider swiper-container js-about-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/webp" srcset="img/image1.webp" />
-                  <img
-                    src="img/image1.jpg"
-                    alt="Изображение 1"
-                    loading="lazy"
-                  />
-                </picture>
+          <div class="slider js-slider">
+            <div class="slider__inner">
+              <button class="slider__prev-arrow js-prev-arrow"></button>
+              <div class="slider-wrapper">
+                <div class="slider__container js-slider-container">
+                  <div class="slider__slide js-slide js-slide--active">
+                    <picture>
+                      <source type="image/webp" srcset="img/image1.webp" />
+                      <img
+                        class="slider__image"
+                        src="img/image1.jpg"
+                        alt="Изображение 1"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                  <div class="slider__slide js-slide">
+                    <picture>
+                      <source type="image/webp" srcset="img/image2.webp" />
+                      <img
+                        class="slider__image"
+                        src="img/image2.jpg"
+                        alt="Изображение 2"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                  <div class="slider__slide js-slide">
+                    <picture>
+                      <source type="image/webp" srcset="img/image3.webp" />
+                      <img
+                        class="slider__image"
+                        src="img/image3.jpg"
+                        alt="Изображение 3"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                  <div class="slider__slide js-slide">
+                    <picture>
+                      <source type="image/webp" srcset="img/image4.webp" />
+                      <img
+                        class="slider__image"
+                        src="img/image4.jpg"
+                        alt="Изображение 4"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                  <div class="slider__slide js-slide">
+                    <picture>
+                      <source type="image/webp" srcset="img/image5.webp" />
+                      <img
+                        class="slider__image"
+                        src="img/image5.jpg"
+                        alt="Изображение 5"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                </div>
               </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/webp" srcset="img/image2.webp" />
-                  <img
-                    src="img/image2.jpg"
-                    alt="Изображение 2"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/webp" srcset="img/image3.webp" />
-                  <img
-                    src="img/image3.jpg"
-                    alt="Изображение 3"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/webp" srcset="img/image4.webp" />
-                  <img
-                    src="img/image4.jpg"
-                    alt="Изображение 4"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source type="image/webp" srcset="img/image5.webp" />
-                  <img
-                    src="img/image5.jpg"
-                    alt="Изображение 5"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
+              <button class="slider__next-arrow js-next-arrow"></button>
+            </div>
+            <div class="slider-section__pagination">
+              <div class="pagination js-slide-buttons"></div>
             </div>
           </div>
-          <div class="swiper-pagination about__pagination"></div>
         </div>
       </section>
       <section class="favorites" id="favorites">
