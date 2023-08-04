@@ -35,7 +35,7 @@
   z-index: 999;
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1024px) {
   .header__nav {
     position: absolute;
     margin: 0;
