@@ -1,5 +1,6 @@
 .menu__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -13,10 +14,12 @@
 }
 
 .menu__item {
-  min-width: 438px;
+  max-width: 438px;
 }
 
 .menu__item:nth-child(even) {
+  max-width: 461px;
+  justify-self: self-end;
   text-align: end;
 }
 
@@ -64,4 +67,10 @@
   font-weight: var(--font-weight-base);
   line-height: var(--font-line-height-base);
   letter-spacing: 2px;
+}
+
+@media (max-width: 1439px) {
+  .menu__list {
+    grid-template-columns: 1fr;
+  }
 }
