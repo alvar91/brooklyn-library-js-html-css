@@ -71,3 +71,14 @@
   line-height: 20px;
   letter-spacing: 2px;
 }
+
+@media (max-width: 1439px) {
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer__school {
+    margin-left: 47px;
+  }
+}
