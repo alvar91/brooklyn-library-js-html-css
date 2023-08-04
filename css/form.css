@@ -61,3 +61,9 @@
   line-height: normal;
   letter-spacing: 1px;
 }
+
+@media (max-width: 1439px) {
+  .form {
+    max-width: 600px;
+  }
+}
