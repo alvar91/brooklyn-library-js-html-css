@@ -52,8 +52,36 @@
   gap: 20px;
 }
 
+.digital-library__form {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1439px) {
+  .digital-library {
+    margin-bottom: 40px;
+  }
+
   .digital-library__inner {
     flex-direction: column;
+  }
+
+  .digital-library__title-card {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .digital-library__block:first-child {
+    margin-bottom: 21px;
+  }
+
+  .digital-library__text {
+    margin-bottom: 40px;
+    text-align: center;
+    width: auto;
+  }
+
+  .digital-library__buttons {
+    justify-content: center;
   }
 }
