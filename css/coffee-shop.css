@@ -8,3 +8,9 @@
   line-height: var(--font-line-height-base);
   letter-spacing: 2px;
 }
+
+@media (max-width: 1439px) {
+  .coffee-shop__text {
+    letter-spacing: 1.9px;
+  }
+}
