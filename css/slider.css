@@ -80,6 +80,10 @@
   cursor: pointer;
 }
 
+.pagination__dot:nth-child(n + 4) {
+  display: none;
+}
+
 .bullet {
   pointer-events: none;
 }
@@ -103,6 +107,10 @@
 
   .slider__prev-arrow,
   .slider__next-arrow {
+    display: block;
+  }
+
+  .pagination__dot:nth-child(n + 4) {
     display: block;
   }
 }
