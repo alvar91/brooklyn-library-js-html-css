@@ -22,6 +22,10 @@
   margin-bottom: 20px;
 }
 
+.contacts__block {
+  align-self: flex-start;
+}
+
 .contacts__list {
   margin-bottom: 40px;
 }
@@ -57,4 +61,16 @@
   width: 696px;
   height: 414px;
   border: none;
+}
+
+@media (max-width: 1439px) {
+  .contacts__inner {
+    flex-direction: column;
+    gap: 98px;
+    align-items: center;
+  }
+
+  .contacts__frame {
+    width: 100%;
+  }
 }
