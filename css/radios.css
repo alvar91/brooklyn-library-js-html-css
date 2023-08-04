@@ -46,6 +46,10 @@
   margin-right: 86px;
 }
 
+.radios__item:last-child {
+  margin-right: 0;
+}
+
 .radios__text {
   position: absolute;
   left: 37px;
