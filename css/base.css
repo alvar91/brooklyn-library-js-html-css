@@ -7,7 +7,6 @@ html {
 }
 
 body {
-  min-width: var(--min-width);
   margin: 0;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
@@ -47,4 +46,14 @@ ul {
   border-bottom: 2px solid var(--primary);
   transition: color var(--transition-duration) var(--transition-function),
     border-bottom var(--transition-duration) var(--transition-function);
+}
+
+.only-tablet {
+  display: none;
+}
+
+@media (max-width: 1439px) {
+  .only-tablet {
+    display: block;
+  }
 }
