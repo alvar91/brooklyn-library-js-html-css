@@ -50,9 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         element.innerHTML = `
           <button class="pagination__dot ${
-            i === 1
-              ? "pagination__dot pagination__dot--active"
-              : "pagination__dot"
+            i === 1 ? "pagination__dot--active" : ""
           } js-slide-button" data-dot-id="${i}">
             <div class="bullet"></div>
           </button>
@@ -85,6 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Текущее перемещение слайдов вдоль оси x
     let currentTranslate = 0;
+
+    //Количество слайдов при десктопе
+    const desktopDotsCount = 3;
 
     //Функция для перемещения слайдов вдоль оси x
     const translateSlides = (dotId) => {
@@ -165,5 +166,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     slider.querySelector(".js-slide-buttons");
     addEventListener("click", dotsHandler);
+
+    window.addEventListener("resize", () => {
+      if (activeDot.dataset.dotId > desktopDotsCount) {
+        const firstNumberSlide = 1;
+        translateSlides(firstNumberSlide);
+      }
+    });
   })();
 });
