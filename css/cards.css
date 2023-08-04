@@ -104,3 +104,9 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 767px) {
+  .cards__list {
+    grid-template-columns: 525px;
+  }
+}
