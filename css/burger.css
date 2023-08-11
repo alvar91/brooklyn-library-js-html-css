@@ -61,9 +61,9 @@
 }
 
 @media (max-width: 1024px) {
-  .js-burger-open {
+  /* .js-burger-open {
     padding-right: 6px;
-  }
+  } */
 
   .burger-menu {
     display: flex;
