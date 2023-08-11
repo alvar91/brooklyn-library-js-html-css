@@ -80,7 +80,7 @@
   cursor: pointer;
 }
 
-.pagination__dot:nth-child(n + 4) {
+.pagination__dot:nth-last-of-type(-n + 2) {
   display: none;
 }
 
