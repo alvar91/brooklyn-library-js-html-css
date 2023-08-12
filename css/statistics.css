@@ -1,0 +1,9 @@
+.statistics__title {
+  color: var(--title-color);
+  font-size: var(--font-size-small);
+  font-style: normal;
+  font-weight: var(--font-line-height-base);
+  line-height: var(--font-line-height-small);
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}

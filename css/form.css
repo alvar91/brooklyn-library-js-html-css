@@ -67,3 +67,15 @@
     max-width: 600px;
   }
 }
+
+.form__list {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
