@@ -20,6 +20,11 @@
   background: var(--bg-color);
 }
 
+.popup__container--profile {
+  width: 430px;
+  padding: 40px 20px;
+}
+
 .popup__close-btn {
   display: block;
   position: absolute;
@@ -51,6 +56,17 @@
   text-transform: uppercase;
 }
 
+.popup__heading--profile {
+  margin-bottom: 40px;
+
+  text-align: left;
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-base);
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
 .popup__text {
   margin: 0;
 
@@ -75,6 +91,65 @@
   line-height: normal;
   letter-spacing: 1px;
   text-decoration-line: underline;
+}
+
+.popup__list {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.popup__item {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  width: 170px;
+  /* height: 100%; */
+  background-color: var(--dark);
+}
+
+.popup__inner-card {
+  display: flex;
+}
+
+.popup__rented {
+  margin-bottom: 40px;
+}
+
+.popup__card-number {
+  display: flex;
+  gap: 15px;
+}
+
+.popup__number {
+  color: var(--primary);
+  font-size: var(--font-line-height-small);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-small);
+}
+
+.popup__card-title {
+  color: var(--dark);
+  font-size: var(--font-line-height-small);
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-small);
+}
+
+.popup__clipboard {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: url("../img/icon-clipboard.svg") no-repeat center;
+  cursor: pointer;
 }
 
 .active {

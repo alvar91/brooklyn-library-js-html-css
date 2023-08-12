@@ -7,3 +7,19 @@
   letter-spacing: 0.2px;
   text-transform: capitalize;
 }
+
+.statistics__title--big {
+  font-size: var(--font-line-height-small);
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+}
+
+.statistics__count {
+  color: var(--title-color);
+  font-size: var(--font-size-small);
+  font-style: normal;
+  font-weight: var(--font-line-height-base);
+  line-height: var(--font-line-height-small);
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}

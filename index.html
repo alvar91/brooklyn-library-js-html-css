@@ -986,7 +986,7 @@
                         src="./img/stat-profile.svg"
                         alt="Иконка пользователя"
                       />
-                      <span class="statistics__title">23</span>
+                      <span class="statistics__count">23</span>
                     </li>
 
                     <li class="form__item statistics">
@@ -996,7 +996,7 @@
                         src="./img/stat-bonuses.svg"
                         alt="Иконка бонусов"
                       />
-                      <span class="statistics__title">1240</span>
+                      <span class="statistics__count">1240</span>
                     </li>
 
                     <li class="form__item statistics">
@@ -1006,7 +1006,7 @@
                         src="./img/stat-books.svg"
                         alt="Иконка книги"
                       />
-                      <span class="statistics__title">2</span>
+                      <span class="statistics__count">2</span>
                     </li>
                   </ul>
                 </form>
@@ -1180,6 +1180,89 @@
           <div class="popup__block">
             <p class="popup__text">Already have an account?</p>
             <a href="#" class="popup__link">Login</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popup js-popup active">
+      <div class="popup__inner-card">
+        <div class="popup__card">
+          <div class="popup__profile-info profile-info">
+            <img
+              class="profile-info__avatar"
+              src="./img/photo.jpg"
+              alt="Аватар пользователя"
+            />
+            <p class="profile-info__name">John Doe</p>
+          </div>
+        </div>
+
+        <div class="popup__container popup__container--profile js-content">
+          <button class="popup__close-btn js-close-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 19 19"
+              fill="none"
+            >
+              <path
+                d="M2 16.8507L17 2.00003"
+                stroke="#0C0C0E"
+                stroke-width="3"
+              />
+              <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3" />
+            </svg>
+          </button>
+          <div class="popup__inner">
+            <h3 class="popup__heading popup__heading--profile">My profile</h3>
+
+            <ul class="popup__list">
+              <li class="popup__item statistics">
+                <span class="statistics__title statistics__title--big">Visits</span>
+                <img
+                  class="profile__avatar"
+                  src="./img/stat-profile.svg"
+                  alt="Иконка пользователя"
+                />
+                <span class="statistics__title">23</span>
+              </li>
+
+              <li class="popup__item statistics">
+                <span class="statistics__title statistics__title--big">Bonuses</span>
+                <img
+                  class="profile__avatar"
+                  src="./img/stat-bonuses.svg"
+                  alt="Иконка бонусов"
+                />
+                <span class="statistics__title">1240</span>
+              </li>
+
+              <li class="popup__item statistics">
+                <span class="statistics__title statistics__title--big">Books</span>
+                <img
+                  class="profile__avatar"
+                  src="./img/stat-books.svg"
+                  alt="Иконка книги"
+                />
+                <span class="statistics__title">2</span>
+              </li>
+            </ul>
+
+            <div class="popup__rented rented">
+              <p class="rented__text">Rented books</p>
+              <ul class="rented__list">
+                <li class="rented__item">The Last Queen, Clive Irving</li>
+                <li class="rented__item">Dominicana, Angie Cruz</li>
+              </ul>
+            </div>
+
+            <div class="popup__card-number">
+              <span class="popup__card-title">Card number</span>
+              <span class="popup__number">F00234030</span>
+              <button class="popup__clipboard"></button>
+            </div>
           </div>
         </div>
       </div>
