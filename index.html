@@ -1185,7 +1185,7 @@
       </div>
     </section>
 
-    <section class="popup js-popup active">
+    <section class="popup js-popup">
       <div class="popup__inner-card">
         <div class="popup__card">
           <div class="popup__profile-info profile-info">
@@ -1220,7 +1220,9 @@
 
             <ul class="popup__list">
               <li class="popup__item statistics">
-                <span class="statistics__title statistics__title--big">Visits</span>
+                <span class="statistics__title statistics__title--big"
+                  >Visits</span
+                >
                 <img
                   class="profile__avatar"
                   src="./img/stat-profile.svg"
@@ -1230,7 +1232,9 @@
               </li>
 
               <li class="popup__item statistics">
-                <span class="statistics__title statistics__title--big">Bonuses</span>
+                <span class="statistics__title statistics__title--big"
+                  >Bonuses</span
+                >
                 <img
                   class="profile__avatar"
                   src="./img/stat-bonuses.svg"
@@ -1240,7 +1244,9 @@
               </li>
 
               <li class="popup__item statistics">
-                <span class="statistics__title statistics__title--big">Books</span>
+                <span class="statistics__title statistics__title--big"
+                  >Books</span
+                >
                 <img
                   class="profile__avatar"
                   src="./img/stat-books.svg"
@@ -1264,6 +1270,86 @@
               <button class="popup__clipboard"></button>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popup js-popup active">
+      <div class="buy">
+        <h3 class="buy__heading">Buy a library card</h3>
+        <button class="buy__close-btn js-close-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="19"
+            height="19"
+            viewBox="0 0 19 19"
+            fill="none"
+          >
+            <path d="M2 16.8507L17 2" stroke="white" stroke-width="3" />
+            <path d="M2 2.14929L17 17" stroke="white" stroke-width="3" />
+          </svg>
+        </button>
+        <div class="buy__inner">
+          <form action="#" class="form-popup form-popup--mb0">
+            <label class="form-popup__label">
+              Bank card number
+              <input class="form-popup__input" type="text" />
+            </label>
+
+            <label class="form-popup__label">
+              Expiration code
+
+              <div class="form-popup__block">
+                <input
+                  class="form-popup__input form-popup__input--short"
+                  type="text"
+                />
+
+                <input
+                  class="form-popup__input form-popup__input--short"
+                  type="text"
+                />
+              </div>
+            </label>
+
+            <label class="form-popup__label">
+              CVC
+              <input
+                class="form-popup__input form-popup__input--short"
+                type="text"
+              />
+            </label>
+
+            <label class="form-popup__label">
+              Cardholder name
+              <input class="form-popup__input" type="text" />
+            </label>
+
+            <label class="form-popup__label">
+              Postal code
+              <input class="form-popup__input" type="text" />
+            </label>
+
+            <label class="form-popup__label">
+              City / Town
+              <input class="form-popup__input" type="text" />
+            </label>
+
+            <div class="buy__block">
+              <button class="form-popup__button button" type="submit">
+                Buy
+              </button>
+
+              <span class="buy__price">$ 25.00</span>
+            </div>
+          </form>
+
+          <p class="buy__text">
+            If you are live, work, attend school, or pay property taxes in New
+            York State, you can get a $25 digital library card right now using
+            this online form. Visitors to New York State can also use this form
+            to apply for a temporary card.
+          </p>
         </div>
       </div>
     </section>

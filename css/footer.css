@@ -1,8 +1,8 @@
 .footer {
   padding: 20px;
   padding-bottom: 0;
-  color: var(--footer-text-color);
-  background-color: var(--footer-bg-color);
+  color: var(--light);
+  background-color: var(--dark);
 }
 
 .footer__top {

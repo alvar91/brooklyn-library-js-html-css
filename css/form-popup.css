@@ -2,6 +2,10 @@
   margin-bottom: 10px;
 }
 
+.form-popup--mb0 {
+  margin-bottom: 0;
+}
+
 .form-popup__label {
   display: flex;
   flex-direction: column;
@@ -28,4 +32,13 @@
   width: 200px;
   height: 20px;
   border: 1px solid var(--primary);
+}
+
+.form-popup__input--short {
+  width: 45px;
+}
+
+.form-popup__block {
+  display: flex;
+  gap: 10px;
 }

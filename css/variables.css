@@ -7,12 +7,10 @@
   --primary: #bb945f;
 
   --bg-color: var(--light);
-  --footer-bg-color: var(--dark);
   --title-color: var(--black);
   --button-color: var(--primary);
   --section-heading: var(--dark);
   --text-color: var(--black);
-  --footer-text-color: var(--light);
 
   /* Fonts */
   --font-family-default: "Arial", sans-serif;
@@ -21,7 +19,7 @@
 
   --font-family: var(--font-family-custom), var(--font-family-default);
   --font-family-sub: var(--font-family-custom-sub), var(--font-family-default);
-  
+
   --font-line-height-small: 20px;
 
   --font-size-small: 10px;
