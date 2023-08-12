@@ -1,0 +1,31 @@
+.form-popup {
+  margin-bottom: 10px;
+}
+
+.form-popup__label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  margin-bottom: 5px;
+
+  color: var(--title-color);
+  text-align: center;
+
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-base);
+  line-height: 30px;
+
+  letter-spacing: 0.3px;
+}
+
+.form-popup__label:last-of-type {
+  margin-bottom: 15px;
+}
+
+.form-popup__input {
+  width: 200px;
+  height: 20px;
+  border: 1px solid var(--primary);
+}

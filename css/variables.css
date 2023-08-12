@@ -21,7 +21,10 @@
 
   --font-family: var(--font-family-custom), var(--font-family-default);
   --font-family-sub: var(--font-family-custom-sub), var(--font-family-default);
+  
+  --font-line-height-small: 20px;
 
+  --font-size-small: 10px;
   --font-size-base: 15px;
   --font-line-height-base: 40px;
   --font-weight-base: 400;
