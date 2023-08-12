@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       list.classList.add("show-mobile-menu");
     }
 
-    document.body.addEventListener("click", (e) => {
-      const target = e.target;
+    document.body.addEventListener("click", ({ target }) => {
       if (
         !target.closest(".burger-menu") &&
         !target.classList.contains("show-mobile-menu")
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Slider
   (function () {
-    function createButtons() {
+    function createButtons(container) {
       const $buttons = document.createDocumentFragment();
 
       for (i = 1; i <= slidesCount; i++) {
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $buttons.appendChild(element.firstElementChild);
       }
 
-      buttonsContainer.appendChild($buttons);
+      container.appendChild($buttons);
     }
 
     // Инициация компонента слайдера
@@ -74,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    createButtons();
+    createButtons(buttonsContainer);
 
     let activeDot = slider.querySelector(".pagination__dot--active");
 
@@ -173,5 +172,111 @@ document.addEventListener("DOMContentLoaded", function () {
         translateSlides(firstNumberSlide);
       }
     });
+  })();
+
+  //Drop menu Profile
+  (function () {
+    let isAuth = false;
+
+    function setAuth(authState = false) {
+      isAuth = authState;
+    }
+
+    function createDropMenu(container) {
+      const element = document.createElement("div");
+
+      element.innerHTML = `
+      <div class="drop-menu js-drop-menu">
+        <h3 class="drop-menu__title">Profile</h3>
+        <ul class="drop-menu__list">
+          <li class="drop-menu__item">
+          ${
+            isAuth
+              ? '<a href="#" class="drop-menu__link">My profile</a>'
+              : '<a href="#" class="drop-menu__link js-login">Log In</a>'
+          }
+          </li>
+          <li class="drop-menu__item">
+            ${
+              isAuth
+                ? '<a href="#" class="drop-menu__link js-logout">Log Out</a>'
+                : '<a href="#" class="drop-menu__link js-register">Register</a>'
+            }
+          </li>
+        </ul>
+      </div>
+    `;
+
+      container.appendChild(element.firstElementChild);
+
+      const $dropMenu = container.querySelector(".js-drop-menu");
+
+      function closeDropMenu() {
+        $dropMenu.classList.remove("js-drop-menu-open");
+      }
+
+      function openDropMenu() {
+        $dropMenu.classList.add("js-drop-menu-open");
+      }
+
+
+      // TODO: Решить вопрос со снятием слушателей
+      document.body.addEventListener("click", ({ target }) => {
+        if (!target.closest(".js-profile")) {
+          closeDropMenu();
+        }
+      });
+
+      profileContainer.addEventListener("click", ({ target }) => {
+        if (
+          !target.closest(".js-drop-menu") &&
+          $dropMenu.classList.contains("js-drop-menu-open")
+        ) {
+          closeDropMenu();
+          return;
+        }
+
+        openDropMenu();
+      });
+
+      window.addEventListener("resize", () => {
+        closeDropMenu();
+      });
+    }
+
+    const profileContainer = document.querySelector(".js-profile");
+
+    if (!profileContainer) {
+      console.error("No necessary elements in the Drop menu Profile");
+      return;
+    }
+
+    createDropMenu(profileContainer);
+
+    // Login
+    // const $loginLink = profileContainer.querySelector(".js-login");
+
+    // $loginLink.addEventListener("click", (e) => {
+    //   e.preventDefault();
+
+    //   setAuth(true);
+
+    //   profileContainer.querySelector(".js-drop-menu").remove();
+
+    //   createDropMenu(profileContainer);
+    // });
+
+    //Logut
+    // const $logoutLink = profileContainer.querySelector(".js-logout");
+
+    // $logoutLink.addEventListener("click", (e) => {
+    //   e.preventDefault();
+
+    //   setAuth(false);
+
+    //   profileContainer.querySelector(".js-drop-menu").remove();
+
+    //   createDropMenu(profileContainer);
+    // });
   })();
 });
