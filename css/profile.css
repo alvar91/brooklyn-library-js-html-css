@@ -1,5 +1,6 @@
 .profile {
   position: relative;
+  z-index: 999;
 }
 
 .profile__avatar {
