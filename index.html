@@ -39,7 +39,7 @@
     />
     <link rel="preload" href="fonts/Forum.woff2" as="font" crossorigin />
     <link rel="stylesheet" href="css/styles.css" />
-    <script defer src="js/main.js"></script>
+    <script type="module" defer src="js/script.js"></script>
   </head>
 
   <body>
@@ -48,7 +48,7 @@
         <h1 class="header__heading">Brooklyn Public Library</h1>
 
         <nav class="header__nav nav">
-          <ul class="nav__list">
+          <ul class="nav__list js-nav__list">
             <li class="nav__item">
               <a class="link" href="#about">About</a>
             </li>
@@ -79,8 +79,7 @@
         </div>
 
         <button
-          class="burger-menu"
-          id="burger-menu"
+          class="burger-menu js-burger-menu"
           aria-label="Развернуть меню навигации"
         >
           <span class="burger-menu__first-line"></span>
@@ -1274,7 +1273,7 @@
       </div>
     </section>
 
-    <section class="popup js-popup active">
+    <section class="popup js-popup">
       <div class="buy">
         <h3 class="buy__heading">Buy a library card</h3>
         <button class="buy__close-btn js-close-btn">
