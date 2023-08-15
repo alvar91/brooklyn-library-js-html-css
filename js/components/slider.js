@@ -7,6 +7,9 @@ export class Slider {
   #prevSlideButton;
   #nextSlideButton;
 
+  // Номер аквтиного слайда по умолчанию
+  #initialActiveSlideNumber = 1;
+
   // Активная точка
   #activeDot = null;
 
@@ -30,7 +33,7 @@ export class Slider {
     this.#slider = document.querySelector(sliderSelector);
     this.#sliderContainer = document.querySelector(sliderContainerSelector);
     this.#slides = document.querySelectorAll(slidesSelector);
-    this.#slidesCount = this.#slides.length ?? 0;
+    this.#slidesCount = this.#slides.length;
     this.#buttonsContainer = document.querySelector(buttonsContainerSelector);
     this.#prevSlideButton = document.querySelector(prevSlideButtonSelector);
     this.#nextSlideButton = document.querySelector(nextSlideButtonSelector);
@@ -44,7 +47,7 @@ export class Slider {
 
       element.innerHTML = `
         <button class="pagination__dot ${
-          i === 1 ? "pagination__dot--active" : ""
+          i === this.#initialActiveSlideNumber ? "pagination__dot--active" : ""
         } js-slide-button" data-dot-id="${i}">
           <div class="bullet"></div>
         </button>
@@ -60,8 +63,24 @@ export class Slider {
 
   //Функция для перемещения слайдов вдоль оси x
   #translateSlides = (dotId) => {
-    if (dotId < 1) dotId = this.#slidesCount;
-    else if (dotId > this.#slidesCount) dotId = 1;
+    // Если слайд оказывается за пределами слайдера
+    // if (dotId < 1) dotId = this.#slidesCount;
+    // else if (dotId > this.#slidesCount) dotId = 1;
+
+    if (dotId > 1 && dotId < this.#slidesCount) {
+      this.#prevSlideButton.disabled = false;
+      this.#nextSlideButton.disabled = false;
+    } else {
+      if (dotId <= 1) {
+        this.#prevSlideButton.disabled = true;
+        this.#nextSlideButton.disabled = false;
+      }
+
+      if (dotId >= this.#slidesCount) {
+        this.#prevSlideButton.disabled = false;
+        this.#nextSlideButton.disabled = true;
+      }
+    }
 
     //Выбираем новый дот в DOM
     const currentDot = this.#slider.querySelector(
@@ -146,15 +165,27 @@ export class Slider {
 
   #initSlider = () => {
     if (
+      !this.#slider ||
       !this.#slidesCount ||
       !this.#sliderContainer ||
-      !this.#buttonsContainer
+      !this.#buttonsContainer ||
+      !this.#prevSlideButton ||
+      !this.#nextSlideButton
     ) {
       console.error("No necessary elements in layout for slider");
       return;
     }
 
     this.#createButtons();
+
+    // Блокируем кнопки-стрелки, если текущий слайд достиг пределов
+    if (this.#initialActiveSlideNumber <= 1) {
+      this.#prevSlideButton.disabled = true;
+    }
+
+    if (this.#initialActiveSlideNumber >= this.#slidesCount) {
+      this.#nextSlideButton.disabled = true;
+    }
 
     this.#addEventListeners();
   };

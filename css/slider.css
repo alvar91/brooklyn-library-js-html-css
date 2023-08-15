@@ -24,7 +24,7 @@
 
 .slider__container {
   display: flex;
-  transition: 0.2s all linear;
+  transition: 0.6s all linear;
 }
 
 .slider__prev-arrow {
