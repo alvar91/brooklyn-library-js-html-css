@@ -1,5 +1,15 @@
 .radios {
   margin-bottom: 27px;
+
+  background-color: var(--bg-color);
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .radios {
+    position: sticky;
+    top: 0px;
+  }
 }
 
 .radios__list {
