@@ -1,4 +1,4 @@
-import {AbstractView} from "../../abstract-view.js";
+import { AbstractView } from "../../abstract-view.js";
 
 const createMainContainerTemplate = () => {
   return `<main class="main js-main-container"></main>`;
