@@ -1,18 +1,17 @@
 .drop-menu {
   position: absolute;
   top: 56px;
+  right: 0;
 
   display: none;
 
   padding: 0 4px;
   padding-bottom: 20px;
 
-  width: 80px;
+  min-width: 80px;
   min-height: 115px;
   background-color: var(--bg-color);
   color: var(--text-color);
-
-  transform: translateX(-25px);
 }
 
 .js-drop-menu-open {
