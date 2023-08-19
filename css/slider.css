@@ -88,6 +88,11 @@
   pointer-events: none;
 }
 
+.pagination__dot--active {
+  pointer-events: none;
+  cursor: auto;
+}
+
 .pagination__dot--active .bullet {
   background-color: var(--button-color);
   outline: none;
