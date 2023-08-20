@@ -1,4 +1,4 @@
-import { SmartView } from "../../smart.js";
+import { SmartView } from "../../smart-view.js";
 import { State } from "../../../const.js";
 
 const addDisabledProperty = (isDisabled) => {
@@ -22,7 +22,6 @@ export class ButtonFilledView extends SmartView {
     this._title = title;
     this._state = { isDisabled };
     this._handler = {};
-    // this._client = client;
   }
 
   _clickHandler = (evt) => {
@@ -49,16 +48,13 @@ export class ButtonFilledView extends SmartView {
 
   setViewState(state) {
     const resetFormState = () => {
-      this.updateData({
-        // isAdding: false,
-      });
+      this.updateData({});
     };
 
     switch (state) {
       case State.ADDING:
         this.updateData({
           isDisabled: true,
-          // isAdding: true,
         });
         break;
       case State.ABORTING:
