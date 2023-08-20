@@ -38,6 +38,14 @@
   width: 45px;
 }
 
+.form__input--focused {
+  border-color: var(--grey);
+}
+
+.form-popup__input--error {
+  border-color: var(--error);
+}
+
 .form-popup__block {
   display: flex;
   gap: 10px;
