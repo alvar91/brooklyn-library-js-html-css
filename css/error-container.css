@@ -1,0 +1,10 @@
+.error-container__error {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: var(--font-size-base);
+  font-style: normal;
+  font-weight: var(--font-weight-base);
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  color: var(--error);
+}
