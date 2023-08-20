@@ -9,3 +9,20 @@
 
   vertical-align: middle;
 }
+
+.profile__initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+
+  color: var(--primary);
+
+  font-size: var(--font-size-base);
+
+  font-weight: var(--font-weight-base);
+  line-height: var(--font-line-height-small);
+}
