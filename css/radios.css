@@ -65,6 +65,7 @@
   left: 37px;
   padding-bottom: 3px;
   line-height: normal;
+  text-transform: capitalize;
 }
 
 .radios__dot {
