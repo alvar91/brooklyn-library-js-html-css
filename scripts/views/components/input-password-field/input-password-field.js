@@ -49,12 +49,10 @@ export class InputPasswordFieldView extends AbstractView {
   setChangeHandler(handler) {
     this._handler.change = handler;
 
-    this.getElement()
-      .querySelector(".js-input")
-      .addEventListener(`focusout`, this._changeHandler);
+    const input = this.getElement().querySelector(".js-input");
 
-    this.getElement()
-      .querySelector(".js-input")
-      .addEventListener(`focus`, (evt) => this._setValid(evt));
+    input.addEventListener(`focusout`, this._changeHandler);
+
+    input.addEventListener(`focus`, (evt) => this._setValid(evt));
   }
 }
