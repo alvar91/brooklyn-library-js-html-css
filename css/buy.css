@@ -31,6 +31,7 @@
   padding: 2px;
   border: none;
   background-color: transparent;
+  background: url("../img/closs-cross-buy.svg") center no-repeat;
   cursor: pointer;
   z-index: 1;
   transition: fill 0.3s ease, background-color 0.3s ease;
@@ -55,7 +56,15 @@
   align-items: end;
 }
 
+.buy__form {
+  position: relative;
+}
+
 .buy__price {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+
   color: var(--dark);
   font-size: var(--font-line-height-small);
   font-weight: var(--font-weight-bold);
@@ -66,4 +75,5 @@
 
 .buy__text {
   margin: 0;
+  margin-bottom: 10px;
 }
