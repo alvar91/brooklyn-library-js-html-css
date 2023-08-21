@@ -25,16 +25,24 @@ const createFavoritesRadiosTemplate = (books) => {
     </div>`;
 };
 
-const createButtonTemplate = (id, rentedBooks) => {
-  if (rentedBooks && rentedBooks[id])
-    return `<button class="cards__button button js-open-library-card" disabled type="button">Own</button>`;
+const createButtonTemplate = (id, currentAccount) => {
+  if (currentAccount?.rentedBooks[id])
+    return `<button class="cards__button button js-open-library-card" disabled data-book-id="${id}" type="button">Own</button>`;
 
-  return `<button class="cards__button button js-open-library-card" type="button">Buy</button>`;
+  const isLibraryCardBought = currentAccount?.isLibraryCardBought;
+
+  return `<button class="cards__button button ${
+    currentAccount !== null
+      ? isLibraryCardBought
+        ? "js-buy-book"
+        : "js-buy-modal-book"
+      : "js-signin"
+  }" data-book-id="${id}"  type="button">Buy</button>`;
 };
 
 const createFavoritesCardTemplate = (
   { id, title, name, author, description, imgSrc },
-  rentedBooks
+  currentAccount
 ) => {
   return `
         <li class="cards__item">
@@ -44,7 +52,7 @@ const createFavoritesCardTemplate = (
                 <p class="cards__name">${name}</p>
                 <p class="cards__author">${author}</p>
                 <p class="cards__description">${description}</p>
-                ${createButtonTemplate(id, rentedBooks)}
+                ${createButtonTemplate(id, currentAccount)}
             </article>
             </div>
 
@@ -62,7 +70,7 @@ const createFavoritesCardTemplate = (
         </li>`;
 };
 
-const createFavoritesCardsTemplate = (books, rentedBooks) => {
+const createFavoritesCardsTemplate = (books, currentAccount) => {
   return Object.entries(books)
     .map(([key, booksValues], index) => {
       return `
@@ -73,7 +81,7 @@ const createFavoritesCardsTemplate = (books, rentedBooks) => {
             } js-target" data-target="${key}">
                 <ul class="cards__list">${booksValues
                   .map((booksValue) =>
-                    createFavoritesCardTemplate(booksValue, rentedBooks)
+                    createFavoritesCardTemplate(booksValue, currentAccount)
                   )
                   .join("")}</ul>
             </div>
@@ -82,43 +90,43 @@ const createFavoritesCardsTemplate = (books, rentedBooks) => {
     .join("");
 };
 
-const createFavoritesInnerTemplate = (books, rentedBooks) => {
+const createFavoritesInnerTemplate = (books, currentAccount) => {
   if (!books) return `Книги отсутствуют`;
 
   return `
         ${createFavoritesRadiosTemplate(books)}
         <div class="favorites__container">
-          ${createFavoritesCardsTemplate(books, rentedBooks)}
+          ${createFavoritesCardsTemplate(books, currentAccount)}
         </div>
     `;
 };
 
-const createFavoritesTemplate = (books, rentedBooks) => {
+const createFavoritesTemplate = (books, currentAccount) => {
   return `
     <section class="favorites" id="favorites">
         <div class="container">
             <h2 class="section-heading">Favorites</h2>
-            ${createFavoritesInnerTemplate(books, rentedBooks)}
+            ${createFavoritesInnerTemplate(books, currentAccount)}
         </div>
     </section>`;
 };
 
 export class FavoritesView extends AbstractView {
   #books;
-  #rentedBooks;
+  #currentAccount;
 
-  constructor(books, rentedBooks) {
+  constructor(books, currentAccount) {
     super();
 
     this.#books = books;
-    this.#rentedBooks = rentedBooks;
+    this.#currentAccount = currentAccount;
   }
 
   getTemplate() {
-    return createFavoritesTemplate(this.#books, this.#rentedBooks);
+    return createFavoritesTemplate(this.#books, this.#currentAccount);
   }
 
-  setHandlers() {
+  #sliderHandlers() {
     const inputs = this.getElement().querySelectorAll(".js-radio-input");
     const targets = this.getElement().querySelectorAll(".js-target");
 
@@ -135,5 +143,55 @@ export class FavoritesView extends AbstractView {
           .classList.add("active-target");
       });
     });
+  }
+
+  #signinHandler = (signinHandler) => {
+    const signinItems = this.getElement().querySelectorAll(".js-signin");
+
+    if (signinItems.length > 0) {
+      signinItems.forEach((signinItem) => {
+        signinItem.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          signinHandler();
+        });
+      });
+    }
+  };
+
+  #handleBuyModalHandler(handleBuyModalHandler) {
+    const buyItems = this.getElement().querySelectorAll(".js-buy-modal-book");
+
+    if (buyItems.length > 0) {
+      buyItems.forEach((buyItem) => {
+        buyItem.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          handleBuyModalHandler();
+        });
+      });
+    }
+  }
+
+  #handleBuyHandler(handleBuyHandler) {
+    const buyItems = this.getElement().querySelectorAll(".js-buy-book");
+
+    if (buyItems.length > 0) {
+      buyItems.forEach((buyItem) => {
+        buyItem.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const bookId = e.target.dataset.bookId;
+          handleBuyHandler(bookId);
+        });
+      });
+    }
+  }
+
+  setHandlers({ signinHandler, handleBuyModalHandler, handleBuyHandler }) {
+    this.#sliderHandlers();
+    this.#signinHandler(signinHandler);
+    this.#handleBuyModalHandler(handleBuyModalHandler);
+    this.#handleBuyHandler(handleBuyHandler);
   }
 }
