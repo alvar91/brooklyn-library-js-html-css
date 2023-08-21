@@ -10,8 +10,40 @@
   min-height: 555px;
 }
 
-.cards__item:nth-child(n + 5) {
-  display: none;
+.cards__block {
+  position: fixed;
+  right: -100%;
+  opacity: 0;
+  animation: fadeOut ease 2s;
+}
+
+@keyframes fadeOut {
+  0% {
+    position: static;
+    opacity: 1;
+  }
+
+  100% {
+    position: fixed;
+    opacity: 0;
+  }
+}
+
+.active-target {
+  position: static;
+  opacity: 1;
+  animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    position: fixed;
+  }
+  100% {
+    position: static;
+    opacity: 1;
+  }
 }
 
 .cards__inner {
