@@ -42,6 +42,18 @@
   background: var(--bg-color);
 }
 
+.form__input--name {
+  text-transform: capitalize;
+}
+
+.form__input--card-number {
+  text-transform: uppercase;
+}
+
+.form__input--card-number::placeholder {
+  text-transform: initial;
+}
+
 .form__input::placeholder {
   color: var(--grey);
 }
