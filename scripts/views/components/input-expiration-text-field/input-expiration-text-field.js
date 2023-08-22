@@ -21,14 +21,14 @@ const inputFieldTemplate = (field) => {
         } class="form-popup__input form-popup__input--short js-input ${isValidTemplate(
     field.isTouched,
     field.isValid
-  )} ${isFocusedTemplate(value1)}" value="${value1}" type="text" />
+  )} ${isFocusedTemplate(value1)}" value="${value1}" maxlength="2" type="text" />
 
         <input data-fieldid=${
           field.id
         } class="form-popup__input form-popup__input--short js-input ${isValidTemplate(
     field.isTouched,
     field.isValid
-  )} ${isFocusedTemplate(value2)}" value="${value2}" type="text" />
+  )} ${isFocusedTemplate(value2)}" value="${value2}" maxlength="2" type="text" />
 
       </div>
     </label>
