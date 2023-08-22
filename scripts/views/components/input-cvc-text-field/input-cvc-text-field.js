@@ -17,7 +17,7 @@ const inputFieldTemplate = (field) => {
         } class="form-popup__input form-popup__input--short js-input ${isValidTemplate(
           field.isTouched,
           field.isValid
-        )} ${isFocusedTemplate(field.value)}" value="${field.value}" type="text" />
+        )} ${isFocusedTemplate(field.value)}" value="${field.value}" maxlength="3" type="text" />
     </label>
   `;
 };
