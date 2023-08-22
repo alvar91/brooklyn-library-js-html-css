@@ -104,7 +104,10 @@ export class ModalProfileInnerView extends AbstractView {
       e.preventDefault();
 
       const { cardNumber } = this._currentAccount;
-      if (cardNumber) navigator.clipboard.writeText(cardNumber);
+      if (cardNumber) {
+        navigator.clipboard.writeText(cardNumber);
+        Utils.toast("Скопировано в буфер обмена");
+      }
     });
   }
 }
