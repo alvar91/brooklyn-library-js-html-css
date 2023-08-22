@@ -49,8 +49,6 @@ const createReaderNameTemplate = (firstName, lastName) => {
 };
 
 const createFormTemplate = (currentAccount, currentSearchAccount) => {
-  console.log(currentAccount);
-
   const { firstName, lastName, cardNumber } = (currentSearchAccount || currentAccount) ?? {};
 
   return `

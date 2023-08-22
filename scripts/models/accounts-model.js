@@ -81,7 +81,6 @@ export class AccountsModel extends Observer {
   }
 
   resetCurrentSearchAccountWithDelay = (updateType, timeDelay) => {
-    console.log("reset");
     setTimeout(() => {
       this._currentSearchAccount = null;
 

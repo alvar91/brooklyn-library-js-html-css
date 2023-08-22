@@ -49,7 +49,6 @@ export default class Provider {
 
   async _getAccountByCardNumber(accountCardNumber) {
     const accountsEntries = await this.getEntriesAccount();
-    console.log(accountsEntries)
 
     return accountsEntries?.find(
       ([_, { cardNumber }]) => cardNumber === accountCardNumber.toUpperCase()
@@ -102,13 +101,11 @@ export default class Provider {
 
   async searchAccount(submitData) {
     if (this._getIsItemPersisted({ key: "accounts" })) {
-      console.log(submitData);
       const { firstName, secondName, cardNumber } = submitData;
 
       const [_, accountByCardNumber] =
         (await this._getAccountByCardNumber(cardNumber)) || [];
 
-        console.log(accountByCardNumber)
       if (
         accountByCardNumber?.firstName === firstName &&
         accountByCardNumber?.secondName === secondName
