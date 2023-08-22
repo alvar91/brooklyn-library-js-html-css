@@ -6,6 +6,8 @@
   --black: #000;
   --primary: #bb945f;
 
+  --error: #f06a4d;
+
   --bg-color: var(--light);
   --title-color: var(--black);
   --button-color: var(--primary);
