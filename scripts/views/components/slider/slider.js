@@ -215,7 +215,7 @@ export class SliderView extends AbstractView {
     const dotId = e.target.dataset.dotId;
 
     if (!dotId) {
-      console.error("Clicked dot don`t have dotId dataset");
+      // console.error("Clicked dot don`t have dotId dataset");
       return;
     }
 
