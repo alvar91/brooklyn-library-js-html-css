@@ -107,8 +107,8 @@ export default class Provider {
         (await this._getAccountByCardNumber(cardNumber)) || [];
 
       if (
-        accountByCardNumber?.firstName === firstName &&
-        accountByCardNumber?.secondName === secondName
+        accountByCardNumber?.firstName === firstName?.toLowerCase() &&
+        accountByCardNumber?.secondName === secondName?.toLowerCase()
       ) {
         return Promise.resolve(accountByCardNumber);
       }
