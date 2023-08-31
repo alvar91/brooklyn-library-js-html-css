@@ -73,7 +73,7 @@ export const TIME_DELAY_IN_MS = 10 * 1000;
 export const FieldTitle = {
   firstName: "First name",
   lastName: "Last name",
-  email: "Email",
+  email: "E-mail",
   emailOrReaderCard: "E-mail or readers card",
   password: "Password",
   bankCardNumber: "Bank card number",
