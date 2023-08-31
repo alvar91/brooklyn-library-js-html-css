@@ -13,7 +13,7 @@ const createSubmitOrStatsTemplate = (currentAccount, currentSearchAccount) => {
       <li class="form__item statistics">
         <span class="statistics__title">Visits</span>
         <img
-          class="profile__avatar"
+          class="statistics__icon"
           src="./img/stat-profile.svg"
           alt="Иконка пользователя"
         />
@@ -23,7 +23,7 @@ const createSubmitOrStatsTemplate = (currentAccount, currentSearchAccount) => {
       <li class="form__item statistics">
         <span class="statistics__title">Bonuses</span>
         <img
-          class="profile__avatar"
+          class="statistics__icon"
           src="./img/stat-bonuses.svg"
           alt="Иконка бонусов"
         />
@@ -33,7 +33,7 @@ const createSubmitOrStatsTemplate = (currentAccount, currentSearchAccount) => {
       <li class="form__item statistics">
         <span class="statistics__title">Books</span>
         <img
-          class="profile__avatar"
+          class="statistics__icon"
           src="./img/stat-books.svg"
           alt="Иконка книги"
         />
@@ -57,7 +57,7 @@ const createFormTemplate = (currentAccount, currentSearchAccount) => {
       <div class="form__block">
         <span class="form__title">Brooklyn Public Library</span>
         <input
-          class="form__input form__input--name"
+          class="form__input  ${firstName && lastName ? "form__input--name" : ""}"
           type="text"
           name="readerName"
           placeholder="Reader's name"
@@ -121,7 +121,7 @@ const createDigitalLibraryCardTemplate = (currentAccount, currentSearchAccount) 
         <div class="digital-library__inner">
           <div class="digital-library__block">
             <h3 class="digital-library__title-form">
-              Find your Library card
+            ${currentAccount === null ? "Find your Library card" : "Your Library card"}
             </h3>
             ${createFormTemplate(currentAccount, currentSearchAccount)}
           </div>
