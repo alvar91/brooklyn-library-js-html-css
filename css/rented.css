@@ -10,8 +10,13 @@
   line-height: var(--font-line-height-small);
 }
 
+.rented__list {
+  overflow-y: scroll;
+  max-height: 100px;
+}
+
 .rented__item {
-  margin-left: 20px;
+  margin-left: 31px;
   margin-bottom: 10px;
   color: var(--text-color);
 
