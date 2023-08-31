@@ -342,13 +342,14 @@ export class AccountsPresenter {
     const field = currentFormModel?.getField(fieldId);
 
     if (!field) {
-      throw new Error(`Can't find nonexistent field: ${field}`);
+      // throw new Error(`Can't find nonexistent field: ${field}`);
+      return;
     }
 
     if (
       [
         FieldTitle.firstName,
-        FieldTitle.secondName,
+        FieldTitle.lastName,
         FieldTitle.bankCardNumber,
         // FieldTitle.expirationCode,
         FieldTitle.CVC,
@@ -359,6 +360,8 @@ export class AccountsPresenter {
     ) {
       value = formatInput(value);
     }
+
+    if([FieldTitle.email].includes(field.title)) value = value.toLowerCase();
 
     field.value = value;
     field.isTouched = true;
