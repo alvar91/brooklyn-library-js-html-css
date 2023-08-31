@@ -3,12 +3,12 @@
 }
 
 .favorites__container {
-  height: 1158px;
+  height: 1150px;
   overflow: hidden;
 }
 
 @media (max-width: 1439px) {
   .favorites__container {
-    height: 2348px;
+    height: 2340px;
   }
 }
