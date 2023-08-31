@@ -43,7 +43,7 @@ const createModalProfileInnerTemplate = (currentAccount, booksList) => {
             </div>
         </div>
         <div class="popup__container popup__container--profile">
-            <button class="popup__close-btn js-modal-close""></button>
+            <button class="popup__close-btn popup__close-btn--profile js-modal-close""></button>
 
             <div class="popup__inner">
                 <h3 class="popup__heading popup__heading--profile">My profile</h3>
@@ -51,19 +51,19 @@ const createModalProfileInnerTemplate = (currentAccount, booksList) => {
                 <ul class="popup__list">
                     <li class="popup__item statistics">
                         <span class="statistics__title statistics__title--big">Visits</span>
-                        <img class="profile__avatar" src="./img/stat-profile.svg" alt="Иконка пользователя" />
+                        <img class="statistics__icon" src="./img/stat-profile.svg" alt="Иконка пользователя" />
                         <span class="statistics__title">${visits}</span>
                     </li>
             
                     <li class="popup__item statistics">
                         <span class="statistics__title statistics__title--big" >Bonuses</span>
-                        <img class="profile__avatar" src="./img/stat-bonuses.svg" alt="Иконка бонусов" />
+                        <img class="statistics__icon" src="./img/stat-bonuses.svg" alt="Иконка бонусов" />
                         <span class="statistics__title">${bonuses}</span>
                     </li>
             
                     <li class="popup__item statistics">
                         <span class="statistics__title statistics__title--big">Books</span>
-                        <img class="profile__avatar" src="./img/stat-books.svg" alt="Иконка книги"/>
+                        <img class="statistics__icon" src="./img/stat-books.svg" alt="Иконка книги"/>
                         <span class="statistics__title">${Object.keys(rentedBooks).length}</span>
                     </li>
                 </ul>
