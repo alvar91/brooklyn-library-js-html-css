@@ -50,7 +50,7 @@ const createFavoritesCardTemplate = (
             <article class="cards__content">
                 <h3 class="cards__title">${title}</h3>
                 <p class="cards__name">${name}</p>
-                <p class="cards__author">${author}</p>
+                <p class="cards__author">By ${author}</p>
                 <p class="cards__description">${description}</p>
                 ${createButtonTemplate(id, currentAccount)}
             </article>
