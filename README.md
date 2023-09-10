@@ -1,0 +1,1 @@
+<img src='./preview/brooklyn-public-library.png' width='300px'>
