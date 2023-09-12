@@ -74,17 +74,12 @@ const createFavoritesCardsTemplate = (books, currentAccount) => {
   return Object.entries(books)
     .map(([key, booksValues], index) => {
       return `
-
-        <div class="favorites__cards cards">
-            <div class="cards__block ${
-              index === 0 ? "active-target" : ""
-            } js-target" data-target="${key}">
-                <ul class="cards__list">${booksValues
-                  .map((booksValue) =>
-                    createFavoritesCardTemplate(booksValue, currentAccount)
-                  )
-                  .join("")}</ul>
-            </div>
+        <div class="favorites__cards cards ${
+          index === 0 ? "" : "hide"
+        } fade js-target" data-target="${key}">
+            <ul class="cards__list">${booksValues.map((booksValue) =>
+                  createFavoritesCardTemplate(booksValue, currentAccount)).join("")}
+            </ul>
           </div>`;
     })
     .join("");
@@ -133,14 +128,26 @@ export class FavoritesView extends AbstractView {
     inputs.forEach((button) => {
       button.addEventListener("click", (e) => {
         targets.forEach((content) => {
-          content.classList.remove("active-target");
+          content.classList.add("fade-out");
+
+          setTimeout(() => {
+            content.classList.add("hide");
+            content.classList.remove("fade-out");
+          }, 500);
         });
 
         const path = e.currentTarget.dataset.path;
 
-        this.getElement()
-          .querySelector(`[data-target="${path}"]`)
-          .classList.add("active-target");
+        const selectedSeason = this.getElement().querySelector(
+          `[data-target="${path}"]`
+        );
+
+        if (selectedSeason) {
+          setTimeout(() => {
+            selectedSeason.classList.remove("hide");
+            selectedSeason.classList.add("fade");
+          }, 500);
+        }
       });
     });
   }
