@@ -99,12 +99,15 @@ export class AppView {
 
     const books = this._accountsPresenter.getBooks();
 
-    this._favoritesComponent = new FavoritesView(books, currentAccount);
+    const currentSeason = this._accountsPresenter.getCurrentSeason();
+
+    this._favoritesComponent = new FavoritesView(books, currentAccount, currentSeason);
     Render.render(this._mainContainer, this._favoritesComponent);
     this._favoritesComponent.setHandlers({
       signinHandler: this._accountsPresenter.handleSigninClick,
       handleBuyModalHandler: this._accountsPresenter.handleBuyModalClick,
       handleBuyHandler: this._accountsPresenter.handleBuyClick,
+      currentSeasonChangeHandler: this._accountsPresenter.setCurrentSeasonChange,
     });
 
     this._coffeeShopComponent = new CoffeeShopView();

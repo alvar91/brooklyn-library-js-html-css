@@ -1,10 +1,10 @@
 import { AbstractView } from "../../abstract-view.js";
 
-const createFavoritesRadioTemplate = (key, index) => {
+const createFavoritesRadioTemplate = (key, index, currentSeason) => {
   return `
         <li class="radios__item">
             <input type="radio" class="radios__input js-radio-input" name="favorites" id="${key}" data-path="${key}" ${
-    index === 0 ? "checked" : ""
+    index === currentSeason ? "checked" : ""
   } />
             <label for="${key}" class="radios__wrapper">
                 <span class="radios__dot"></span>
@@ -13,13 +13,13 @@ const createFavoritesRadioTemplate = (key, index) => {
         </li>`;
 };
 
-const createFavoritesRadiosTemplate = (books) => {
+const createFavoritesRadiosTemplate = (books, currentSeason) => {
   return `
     <div class="favorites__radios radios">
         <h3 class="radios__title">Pick favorites of season</h3>
         <form class="radios__form" action="#">
             <ul class="radios__list">${Object.keys(books)
-              .map((key, index) => createFavoritesRadioTemplate(key, index))
+              .map((key, index) => createFavoritesRadioTemplate(key, index, currentSeason))
               .join("")}</ul>
         </form>
     </div>`;
@@ -70,12 +70,12 @@ const createFavoritesCardTemplate = (
         </li>`;
 };
 
-const createFavoritesCardsTemplate = (books, currentAccount) => {
+const createFavoritesCardsTemplate = (books, currentAccount, currentSeason) => {
   return Object.entries(books)
     .map(([key, booksValues], index) => {
       return `
         <div class="favorites__cards cards ${
-          index === 0 ? "" : "hide"
+          index === currentSeason ? "" : "hide"
         } fade js-target" data-target="${key}">
             <ul class="cards__list">${booksValues.map((booksValue) =>
                   createFavoritesCardTemplate(booksValue, currentAccount)).join("")}
@@ -85,23 +85,23 @@ const createFavoritesCardsTemplate = (books, currentAccount) => {
     .join("");
 };
 
-const createFavoritesInnerTemplate = (books, currentAccount) => {
+const createFavoritesInnerTemplate = (books, currentAccount, currentSeason) => {
   if (!books) return `Книги отсутствуют`;
 
   return `
-        ${createFavoritesRadiosTemplate(books)}
+        ${createFavoritesRadiosTemplate(books, currentSeason)}
         <div class="favorites__container">
-          ${createFavoritesCardsTemplate(books, currentAccount)}
+          ${createFavoritesCardsTemplate(books, currentAccount, currentSeason)}
         </div>
     `;
 };
 
-const createFavoritesTemplate = (books, currentAccount) => {
+const createFavoritesTemplate = (books, currentAccount, currentSeason) => {
   return `
     <section class="favorites" id="favorites">
         <div class="container">
             <h2 class="section-heading">Favorites</h2>
-            ${createFavoritesInnerTemplate(books, currentAccount)}
+            ${createFavoritesInnerTemplate(books, currentAccount, currentSeason)}
         </div>
     </section>`;
 };
@@ -109,23 +109,25 @@ const createFavoritesTemplate = (books, currentAccount) => {
 export class FavoritesView extends AbstractView {
   #books;
   #currentAccount;
+  #currentSeason;
 
-  constructor(books, currentAccount) {
+  constructor(books, currentAccount, currentSeason) {
     super();
 
     this.#books = books;
     this.#currentAccount = currentAccount;
+    this.#currentSeason = currentSeason;
   }
 
   getTemplate() {
-    return createFavoritesTemplate(this.#books, this.#currentAccount);
+    return createFavoritesTemplate(this.#books, this.#currentAccount, this.#currentSeason);
   }
 
   #sliderHandlers() {
     const inputs = this.getElement().querySelectorAll(".js-radio-input");
     const targets = this.getElement().querySelectorAll(".js-target");
 
-    inputs.forEach((button) => {
+    inputs.forEach((button, index) => {
       button.addEventListener("click", (e) => {
         targets.forEach((content) => {
           content.classList.add("fade-out");
@@ -137,6 +139,8 @@ export class FavoritesView extends AbstractView {
         });
 
         const path = e.currentTarget.dataset.path;
+
+        this.currentSeasonChangeHandler(index);
 
         const selectedSeason = this.getElement().querySelector(
           `[data-target="${path}"]`
@@ -195,10 +199,11 @@ export class FavoritesView extends AbstractView {
     }
   }
 
-  setHandlers({ signinHandler, handleBuyModalHandler, handleBuyHandler }) {
+  setHandlers({ signinHandler, handleBuyModalHandler, handleBuyHandler, currentSeasonChangeHandler }) {
     this.#sliderHandlers();
     this.#signinHandler(signinHandler);
     this.#handleBuyModalHandler(handleBuyModalHandler);
     this.#handleBuyHandler(handleBuyHandler);
+    this.currentSeasonChangeHandler = currentSeasonChangeHandler;
   }
 }

@@ -5,6 +5,7 @@ export class BooksModel extends Observer {
     super();
 
     this._books = null;
+    this._currentSeason = 0;
   }
 
   setIsBooksLoading(updateType, update) {
@@ -19,5 +20,13 @@ export class BooksModel extends Observer {
     this._books = books;
 
     this._notify(updateType, { isLoading: false });
+  }
+
+  setCurrentSeason(season) {
+    this._currentSeason = season;
+  }
+
+  getCurrentSeason() {
+    return this._currentSeason;
   }
 }

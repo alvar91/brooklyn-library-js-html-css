@@ -426,6 +426,14 @@ export class AccountsPresenter {
     return this._booksModel.getBooks();
   }
 
+  setCurrentSeasonChange = (season) => {
+    this._booksModel.setCurrentSeason(season);
+  }
+
+  getCurrentSeason() {
+    return this._booksModel.getCurrentSeason();
+  }
+
   getCurrentSearchAccount() {
     return this._accountsModel.getCurrentSearchAccount();
   }
